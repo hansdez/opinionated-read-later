@@ -7,7 +7,7 @@ class Apicontroller
 
     public static function addLink()
     {
-        // Check if the request is authenthicated
+        // Check if the request is authenticated
         if (empty($_GET['key']) || $_GET['key'] != $_ENV['API_KEY']) { 
             // Not authenticated
             \Flight::json(array('error' => "The API key wasn't added or is incorrect"), 403);
@@ -27,7 +27,7 @@ class Apicontroller
 
     public static function showReadLater()
     {
-        // Check if the request is authenthicated
+        // Check if the request is authenticated
         if (empty($_GET['key']) || $_GET['key'] != $_ENV['API_KEY']) { 
             // Not authenticated
             \Flight::json(array('error' => "The API key wasn't added or is incorrect"), 403);
@@ -39,7 +39,7 @@ class Apicontroller
 
     public static function showToReadNow()
     {
-        // Check if the request is authenthicated
+        // Check if the request is authenticated
         if (empty($_GET['key']) || $_GET['key'] != $_ENV['API_KEY']) { 
             // Not authenticated
             \Flight::json(array('error' => "The API key wasn't added or is incorrect"), 403);
@@ -52,7 +52,7 @@ class Apicontroller
 
     public static function showRead()
     {
-        // Check if the request is authenthicated
+        // Check if the request is authenticated
         if (empty($_GET['key']) || $_GET['key'] != $_ENV['API_KEY']) { 
             // Not authenticated
             \Flight::json(array('error' => "The API key wasn't added or is incorrect"), 403);
@@ -64,7 +64,7 @@ class Apicontroller
 
     public static function showExpired()
     {
-        // Check if the request is authenthicated
+        // Check if the request is authenticated
         if (empty($_GET['key']) || $_GET['key'] != $_ENV['API_KEY']) { 
             // Not authenticated
             \Flight::json(array('error' => "The API key wasn't added or is incorrect"), 403);
