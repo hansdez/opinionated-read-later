@@ -1,0 +1,64 @@
+### This file should be stored as .env
+
+### Required: you will need to change these values for things to work:
+
+# Don't put a / at the end of the URL
+BASE_URL="https://www.example.com" 
+
+# Password for accessing Read Later, obviously you should change this
+PASSWORD="default"
+
+# Key for using the API, obviously you should change this
+API_KEY="default"
+
+### End of required
+
+### Optional: you can leave these as is:
+
+# This will be the title of homepage
+HOME_NAME="To read"
+
+# Needs to be 0 in production, but -1 if you want to see some errors
+ERROR_LEVEL=0
+
+# How much time you will have to read something after you've added it (in days)
+DAYS_BEFORE_EXPIRY=18
+
+# How many days are added to the expiry time if you click the snooze button
+DAYS_PER_SNOOZE=8
+
+# The maximum number of unread links that will get shown, 0 means unlimited
+MAXIMUM_ENTRIES_TO_SHOW=0
+
+# Only show unread links this number of days after you've added them, 0 shows all
+# Make sure this is smaller than DAYS_BEFORE_EXPIRY, else you will never see a link
+MINIMUM_AGE_IN_DAYS_TO_SHOW=0
+
+# If this is 1 you can only read the top link, set 0 to be able to pick what you read
+FORCE_READ_FIRST=0
+
+# If this is 1 you will see a form to add links, set to 0 to hide
+SHOW_ADD_LINK_FORM=1
+
+# If this is 1 your see when links expire, set to 0 to hide this
+SHOW_EXPIRY_TIME=1
+
+# If this is 1 you will see a bookmarklet you can add, set to 0 to hide
+SHOW_BOOKMARKLET=1
+
+# If this is 1 you will see a line of credits, set to 0 to hide
+SHOW_CREATOR=1
+
+# If this is 1 you will see the option to sign out, set to 0 to hide
+SHOW_SIGN_OUT=1
+
+# If this is 1 you will see the link to the read articles, set to 0 to hide
+SHOW_READ_LINK=1
+
+# If this is 1 you will see the link to the expired articles, set to 0 to hide
+SHOW_EXPIRED_LINK=1
+
+# If this is 1 you will see an explanation of how 'snooze all' works, set 0 to hide
+SHOW_SNOOZE_ALL_EXPLANATION=1
+
+### End of optional

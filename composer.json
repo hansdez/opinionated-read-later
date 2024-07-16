@@ -1,0 +1,35 @@
+{
+    "name": "hdz/readlater",
+    "description": "A very simple Read Later tool",
+    "type": "project",
+    "require": {
+        "mikecao/flight": "^3.8",
+        "catfan/medoo": "^2.1",
+        "fortawesome/font-awesome": "^6.5",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.4"
+    },
+    "license": "MIT-0",
+    "autoload": {
+        "psr-4": {
+            "Hdz\\ReadLater\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hans de Zwart",
+            "email": "git@hansdezwart.info"
+        }
+    ],
+    "scripts": {
+        "post-update-cmd": [
+            "wget -O public/css/bulma.min.css https://raw.githubusercontent.com/jgthms/bulma/main/css/bulma.min.css",
+            "cp vendor/fortawesome/font-awesome/css/fontawesome.min.css public/css/",
+            "cp vendor/fortawesome/font-awesome/css/solid.min.css public/css/",
+            "cp vendor/fortawesome/font-awesome/css/regular.min.css public/css/",
+            "cp vendor/fortawesome/font-awesome/webfonts/* public/webfonts/"
+        ]
+    }
+}
