@@ -44,16 +44,16 @@ Unfortunately, this might require a bit of knowledge on your side to get it goin
 
 The server requires a recent version of PHP (it has been developed on 8.1.x) and should have SQLite abilities.
 
-You can download a packaged version (which includes all the libraries) [here]().
+You can download a packaged version (which includes all the libraries) by download the zip-file titled `opiniated-read-later-version-x.x.x.zip` [here](https://github.com/hansdez/opiniated-read-later/releases/latest).
 
-Alternatively, you can clone the Git repository [here](). In that case, you have to run `composer install` to install all the dependencies.
+Alternatively, you can clone the Git repository [here](https://github.com/hansdez/opiniated-read-later). In that case, you have to run `composer install` to install all the dependencies.
 
 In either case, you will have to copy the `env-template` to `.env` and at the minimum change the `PASSWORD` and `API_KEY` variables from their defaults, and set the correct `BASE_URL`.
 
 The software assumes that the `public` directory is served by the webserver (don't serve the other directories). Also, make sure that symlinks are turned on.
 
 ### A note on security: Beware! This is a hobby project, by an amateur
-The coding of this tool is done by an amateur. This means that there can be no guarantees for confidentiality, integrity, or availability. In other words: don't store any links that you can't lose or want to keep secret.
+The coding of this tool is done by an amateur (who has never done a unit test in his life). This means that there can be no guarantees for confidentiality, integrity, or availability. In other words: don't store any links that you can't lose or want to keep secret.
 
 It is a single-user tool, that needs a password before you can do anything. But sessions don't expire, there is no rate limiting, and no checks against cross-site scripting. It is basically trusting PHP's URL sanitation to keep you safe.
 
