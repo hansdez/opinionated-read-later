@@ -101,6 +101,17 @@ class Link
     // This doesn't check whether the link already exists: no problem to have things twice
     public static function addNewLink(string $url, string $title = ''): int
     {
+        // Send this link other installations if required
+        if (!empty($_ENV['SHARE_LINKS_VIA_API'])) {
+            $sitesToShareTo = json_decode($_ENV['SHARE_LINKS_VIA_API']);
+            foreach ($sitesToShareTo as $site) {
+                // This doesn't any form of error checking, so it shouldn't trip
+                // if their is misconfiguration or something is offline
+                $site = $site . '&url=' . $url;
+                file_get_contents($site);
+            }
+        }
+
         // First sanitize the input
         $url = urldecode($url);
         $url = filter_var($url, FILTER_SANITIZE_URL);

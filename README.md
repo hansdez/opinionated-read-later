@@ -1,5 +1,5 @@
-# Opinionated Read Later
-A very simple Read Later tool, allowing you to save links to read later. These are then presented oldest first and will expire automatically (with an option for snoozing), keeping your list manageable.
+# Opinionated Read-later
+A very simple read-later tool, allowing you to save links to read later. These are then presented oldest first and will expire automatically (with an option for snoozing), keeping your list manageable.
 
 ![A screenshot of the Opiniated Read Later tool](screenshot-opiniated-read-later.png)
 
@@ -8,7 +8,7 @@ A very simple Read Later tool, allowing you to save links to read later. These a
 Do you have a bunch of open tabs in your browser with longish articles you want to read later? Then this tool should be able to help you out. There are some key ideas behind the tool on how to be intentional about your reading:
 
 - **Treat your to-read pile like a river, not a bucket** (hat tip to [Oliver Burkeman](https://www.oliverburkeman.com/river) for this idea which inspired the tool) - You should see your to-read list like a stream of items flowing past you, not as a bucket that you should empty. That is why unread links eventually will disappear if you don't read them.
-- **Reading means reading** - If you click on a link to read it, you commit yourself to actually reading it: it will disappear from your _read later_ list (and will appear on your _read_ list).
+- **Reading means reading** - If you click on a link to read it, you commit yourself to actually reading it: it will disappear from your _read-later_ list (and will appear on your _read_ list).
 - **Read your oldest items first** - There is only one sort order: news links appear at the bottom of the page. It stimulates you to deal with the older links first (either read them or skip reading through expiring them). This idea also helps with the next point.
 - **Put some time between wanting to read it, and deciding to read it** - Slow things down. You might think it is important to read something now, but you'll be a much better judge of that in a few weeks. (I copied this from the 50-day rule that I use for my personal finances: if you want something that costs more than a hundred euros, wait for 50 days and see if you then still want it).
 - **Don't gamify your reading** - The tool has none of the gamification mechanisms that infest the web today. No badges, no cute texts urging you on, no graphs and counters. It won't even tell you how many links are still unread.
@@ -44,9 +44,9 @@ Unfortunately, this might require a bit of knowledge on your side to get it goin
 
 The server requires a recent version of PHP (it has been developed on 8.1.x) and should have SQLite abilities.
 
-You can download a packaged version (which includes all the libraries) by download the zip-file titled `opiniated-read-later-version-x.x.x.zip` [here](https://github.com/hansdez/opiniated-read-later/releases/latest).
+You can download a packaged version (which includes all the libraries) by downloading the zip-file titled `opiniated-read-later-version-x.x.x.zip` [here](https://github.com/hansdez/opinionated-read-later/releases/latest).
 
-Alternatively, you can clone the Git repository [here](https://github.com/hansdez/opiniated-read-later). In that case, you have to run `composer install` to install all the dependencies.
+Alternatively, you can clone the Git repository [here](https://github.com/hansdez/opinionated-read-later). In that case, you have to run `composer install` to install all the dependencies.
 
 In either case, you will have to copy the `env-template` to `.env` and at the minimum change the `PASSWORD` and `API_KEY` variables from their defaults, and set the correct `BASE_URL`.
 

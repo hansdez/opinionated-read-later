@@ -13,7 +13,7 @@
     </head>
     <body>
         <?=$body_content?>
-        <div class="content has-text-centered is-size-6 mb-5">
+        <div id="bottom" class="content has-text-centered is-size-6 mb-5">
             <?php if($_ENV['SHOW_BOOKMARKLET'] && \Hdz\ReadLater\Security::isLoggedIn()) : ?> 
                 <p><a href="javascript:(function(){var url=encodeURIComponent(location.href);var title=encodeURIComponent(document.title);location.href='<?=$_ENV['BASE_URL']?>/link/add?url='+url+'&title='+title;})();">read later</a> ← Drag this link to your bookmarks</p>
             <?php endif ?>

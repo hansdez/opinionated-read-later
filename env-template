@@ -61,4 +61,12 @@ SHOW_EXPIRED_LINK=1
 # If this is 1 you will see an explanation of how 'snooze all' works, set 0 to hide
 SHOW_SNOOZE_ALL_EXPLANATION=1
 
+# Uncomment and adjust this configuration flag to automatically share any links that get
+# added to this configuration to one or more other installations too. Use JSON-type
+# syntax for the URL(s). Make sure the right API key.
+# A single URL looks like this:
+# SHARE_LINKS_VIA_API=["https://www.example.com/api/v1/add?key=API_KEY"]
+# Multiple URLs look like this:
+# SHARE_LINKS_VIA_API=["https://www.example.com/api/v1/add?key=API_KEY","https://www.anotherexample.com/api/v1/add?key=API_KEY"]
+
 ### End of optional

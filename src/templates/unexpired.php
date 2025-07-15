@@ -24,7 +24,7 @@
         function refreshParent() {
             setTimeout(function() {
                 window.location.reload();
-            }, 100);
+            }, 1000);
         }
     </script>
     <?php foreach ($links as $key => $link) : ?>
