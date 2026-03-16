@@ -157,4 +157,16 @@ class Controller
         }
     }
 
+    public static function spaceOut()
+    {
+        \Hdz\ReadLater\Security::checkLogin();
+        if (!empty($_POST['confirm'])) {
+            \Hdz\ReadLater\Link::spreadExpiries();
+            \Flight::redirect('/');
+        } else {
+            \Flight::render('spaceout', array(), 'body_content');
+            \Flight::render('layout', array('title' => 'Space out links'));
+        }
+    }
+
 }

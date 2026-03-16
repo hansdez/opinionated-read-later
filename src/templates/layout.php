@@ -28,6 +28,7 @@
                     $menu[] = '<a href="/expired">expired</a>';
                 }
                 $menu[] = '<a href="/snooze/all">snooze all</a>';
+                $menu[] = '<a href="/space/out">space out</a>';
                 if ($_ENV['SHOW_SIGN_OUT']) {
                     $menu[] = '<a href="/logout">sign out</a>';
                 }

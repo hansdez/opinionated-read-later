@@ -28,6 +28,9 @@ There are three ways to add links:
 ### Taking a reading break: snoozing all links
 If you don't access the tool, at some point the links you want to read will expire. You can use the _snooze all_ functionality to take a reading break. Just pick the date that you will want to start reading again, and the expiry times of all your unread and unexpired links will adjust accordingly. Perfect if you want to go offline for a while.
 
+### Spreading out your reading: spacing out links
+If you've added a lot of links in a short period of time, they may all expire around the same time, creating an awkward reading pile-up. You can use the _space out_ functionality to spread your unread links evenly across time. It will redistribute all your unread links from 30 hours from now until the current latest expiry, preserving their relative order.
+
 ### There is an API
 And it is simple enough not to be well documented. 😉
 

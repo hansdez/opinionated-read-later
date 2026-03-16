@@ -33,8 +33,7 @@ class Link
                         WHEN expiry-:now < 600 THEN "minutes"
                         WHEN expiry-:now <= 3600 THEN CAST((expiry-:now)/60 AS INTEGER) || " minutes"
                         WHEN expiry-:now < 7200 THEN "1 hour"
-                        WHEN expiry-:now <= 86400 THEN CAST((expiry-:now)/3600 AS INTEGER) || " hours"
-                        WHEN expiry-:now < 172800 THEN "1 day"
+                        WHEN expiry-:now <= 172800 THEN CAST((expiry-:now)/3600 AS INTEGER) || " hours"
                         ELSE CAST((expiry-:now)/86400 AS INTEGER) || " days"
                     END'
                 ,[
@@ -283,6 +282,46 @@ class Link
         return true;
     }
 
+    // Spreads all unexpired links evenly from 30 hours from now to the latest current expiry
+    public static function spreadExpiries(): bool
+    {
+        $database = \FLight::get('database');
+        $now = time();
+        $start = $now + (30 * 3600);
+
+        $links = $database->select('links', ['id', 'expiry'], [
+            'read' => 0,
+            'expiry[>]' => $now,
+            'ORDER' => ['expiry' => 'ASC']
+        ]);
+
+        $count = count($links);
+
+        if ($count === 0) {
+            return true;
+        }
+
+        $latestExpiry = $links[$count - 1]['expiry'];
+
+        if ($count === 1) {
+            $database->update('links', ['expiry' => $start], ['id' => $links[0]['id']]);
+            return true;
+        }
+
+        if ($latestExpiry <= $start) {
+            return true;
+        }
+
+        $interval = ($latestExpiry - $start) / ($count - 1);
+
+        foreach ($links as $index => $link) {
+            $newExpiry = (int)round($start + ($index * $interval));
+            $database->update('links', ['expiry' => $newExpiry], ['id' => $link['id']]);
+        }
+
+        return true;
+    }
+
     // Get all the links that aren't expired
     public static function getUnexpired() : array
     {
@@ -310,8 +349,7 @@ class Link
                     WHEN expiry-:now < 600 THEN "minutes"
                     WHEN expiry-:now <= 3600 THEN CAST((expiry-:now)/60 AS INTEGER) || " minutes"
                     WHEN expiry-:now < 7200 THEN "1 hour"
-                    WHEN expiry-:now <= 86400 THEN CAST((expiry-:now)/3600 AS INTEGER) || " hours"
-                    WHEN expiry-:now < 172800 THEN "1 day"
+                    WHEN expiry-:now <= 172800 THEN CAST((expiry-:now)/3600 AS INTEGER) || " hours"
                     ELSE CAST((expiry-:now)/86400 AS INTEGER) || " days"
                 END'
             ,[

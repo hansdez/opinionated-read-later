@@ -74,6 +74,7 @@ if ($_ENV['MINIMUM_AGE_IN_DAYS_TO_SHOW'] != 0 && $_ENV['MINIMUM_AGE_IN_DAYS_TO_S
 \Flight::route('/link/@id/delete/@type', array('\Hdz\ReadLater\Controller', 'deleteLink'));
 \Flight::route('/added/@id', array('\Hdz\ReadLater\Controller', 'added'));
 \Flight::route('/snooze/all', array('\Hdz\ReadLater\Controller', 'snoozeAll'));
+\Flight::route('/space/out', array('\Hdz\ReadLater\Controller', 'spaceOut'));
 \Flight::route('/read', array('\Hdz\ReadLater\Controller', 'read'));
 \Flight::route('/expired', array('\Hdz\ReadLater\Controller', 'expired'));
 \Flight::route('/api/v1/toreadnow', array('\Hdz\ReadLater\Apicontroller', 'showToReadNow'));
